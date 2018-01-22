@@ -1,10 +1,11 @@
 def quick_sort(list, left = nil, right = nil)
   left ||= 0
   right ||= list.length - 1
+  p "left #{left}, right #{right}"  
   return list if left > right
   i, j = left, right
   pivot = find_pivot(list[left..right])
-  p "left #{left}, right #{right}, pivot: #{pivot}, target: #{list[left..right]}}"
+  # p "left #{left}, right #{right}, pivot: #{pivot}, target: #{list[left..right]}}"
 
   while true
     while(list[i] < pivot) do
