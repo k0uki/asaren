@@ -5,7 +5,15 @@ import (
 	"sort"
 )
 
-func BinarySearch(list []int, target int, imin int, imax int) int {
+func BinarySearch(list []int, target int, args ...int) int {
+	imin := 0
+	imax := len(list) -1
+
+	if len(args) == 2 {
+		imin = args[0]
+		imax = args[1]
+	}
+
 	if imax < imin {
 		return imax + 1
 	} else {
